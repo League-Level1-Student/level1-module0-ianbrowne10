@@ -5,6 +5,7 @@
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -31,24 +32,42 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+int score = 0; 
 		// 2. Set the size of the window in the initializeGui() method below
-
+initializeGui();
 		for (int i = 0; i < 4; i++) {
-			
+
 			// 4. Ask the user who this person is and store their answer
-			String guess= JOptionPane.showInputDialog("who is this?");
+			String guess= JOptionPane.showInputDialog("Who is this? (First name only)");
 			
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-
-			// 6. Otherwise:
+if(i==0&&guess.equalsIgnoreCase("arnold")) {
+	System.out.println("Correct!");
+score +=1;
+}
+else if (i==1&&guess.equalsIgnoreCase("leonardo")) {
+	System.out.println("Correct!");
+score +=1;
+}	
+else if(i==2&&guess.equalsIgnoreCase("morgan")) {
+	System.out.println("Correct!");
+score +=1;
+}
+else if(i==3&&guess.equalsIgnoreCase("jack")) {
+	System.out.println("Correct!");
+score +=1;
+}
+// 6. Otherwise:
 			// -- Tell them they are wrong and who the person is
-
+else {
+	System.out.println("Incorrect!");
+score -=1;
+}
 			// 7. Use the showNextImage() method below to get the next image
 			showNextImage();
 		    // 8. Show them their current score
-			
+			JOptionPane.showMessageDialog(null, "Your score is " +score+"!");
 			// 9. .... repeat for all your images.....
 
 
@@ -75,8 +94,21 @@ public class BodyPartQuiz {
 		window.add(panel);
 		
 		// 3. Change the size of the window so that you can only see part of the image.		
+		Random rand = new Random();
+		int RandomNumber = new Random().nextInt(5);
+		System.out.println(RandomNumber);
+		if(RandomNumber==1) {
 		window.setSize(500,500);
-		
+		}
+		if(RandomNumber==2) {
+			window.setSize(300,68);
+			}
+		if(RandomNumber==3) {
+			window.setSize(205,70);
+			}
+		if(RandomNumber==4) {
+			window.setSize(45,123);
+			}
 		showNextImage();
 		
 	}
