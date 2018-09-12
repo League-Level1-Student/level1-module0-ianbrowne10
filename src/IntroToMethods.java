@@ -1,18 +1,38 @@
 import javax.swing.JOptionPane;
 
+import org.omg.Messaging.SyncScopeHelper;
+
 public class IntroToMethods {
 public static void main(String[] args) {
-	weRock();
-rocker();
+new IntroToMethods().runMethods();
+
+}
+void runMethods() {
+	weRock("Ia");
+	rocker("n ");
+truth("su");
+Truth("ck");
+fartEcho("s a");
+repeat("lot");
 }
 
-static void weRock() {
-	JOptionPane.showMessageDialog(null, "The League Rocks!");
+ void weRock(String we) {
+	JOptionPane.showMessageDialog(null, we);
 }
-static void rocker() {
-	JOptionPane.showMessageDialog(null, "The Tate Rocks!");
+ void rocker(String rock) {
+	JOptionPane.showMessageDialog(null, rock);
 }
+ void truth(String truth) {
+	JOptionPane.showMessageDialog(null, truth);
+}
+ void Truth(String truth) {
+	JOptionPane.showMessageDialog(null, truth);
+}
+ void fartEcho(String fart) {
+	JOptionPane.showMessageDialog(null, fart);
 
-
-
+}
+void repeat(String repeat) {
+JOptionPane.showMessageDialog(null, repeat);
+}
 }
